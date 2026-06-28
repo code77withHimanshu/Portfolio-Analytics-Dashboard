@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import { cn } from '@/utils/cn';
 
 type SkeletonVariant = 'text' | 'card' | 'chart' | 'circle';
@@ -6,6 +7,7 @@ interface SkeletonProps {
   variant?: SkeletonVariant;
   className?: string;
   lines?: number;
+  style?: CSSProperties;
 }
 
 const baseClass =
@@ -18,7 +20,7 @@ const variantDefaults: Record<SkeletonVariant, string> = {
   circle: 'h-10 w-10 rounded-full',
 };
 
-export function Skeleton({ variant = 'text', className, lines = 1 }: SkeletonProps) {
+export function Skeleton({ variant = 'text', className, lines = 1, style }: SkeletonProps) {
   if (variant === 'text' && lines > 1) {
     return (
       <div aria-hidden="true" className="space-y-2" role="presentation">
@@ -37,6 +39,7 @@ export function Skeleton({ variant = 'text', className, lines = 1 }: SkeletonPro
       aria-hidden="true"
       role="presentation"
       className={cn(baseClass, variantDefaults[variant], className)}
+      style={style}
     />
   );
 }

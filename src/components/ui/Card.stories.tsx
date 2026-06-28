@@ -10,9 +10,8 @@ const meta = {
 } satisfies Meta<typeof Card>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Default: StoryObj = {
   render: () => (
     <Card>
       <CardHeader><CardTitle>Card Title</CardTitle></CardHeader>
@@ -21,7 +20,7 @@ export const Default: Story = {
   ),
 };
 
-export const Stale: Story = {
+export const Stale: StoryObj = {
   render: () => (
     <Card isStale dataTimestamp={new Date(Date.now() - 10 * 60_000).toISOString()}>
       <CardHeader><CardTitle>Stale Data</CardTitle></CardHeader>
@@ -30,7 +29,7 @@ export const Stale: Story = {
   ),
 };
 
-export const Loading: Story = {
+export const Loading: StoryObj = {
   render: () => (
     <Card>
       <CardHeader><Skeleton variant="text" className="w-1/3 h-5" /></CardHeader>
@@ -41,7 +40,7 @@ export const Loading: Story = {
   ),
 };
 
-export const AsSection: Story = {
+export const AsSection: StoryObj = {
   render: () => (
     <Card as="section" aria-labelledby="section-heading">
       <CardHeader><CardTitle id="section-heading">Section Card</CardTitle></CardHeader>

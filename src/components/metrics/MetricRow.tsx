@@ -63,7 +63,7 @@ export function MetricRow({ summary, isLoading = false }: MetricRowProps) {
       aria-label="Key portfolio metrics"
     >
       {metrics.map((m) => (
-        <MetricCard key={m.id} id={m.id} {...m} />
+        <MetricCard key={m.id} {...m} />
       ))}
     </div>
   );

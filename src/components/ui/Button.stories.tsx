@@ -23,7 +23,7 @@ export const Danger: Story = { args: { children: 'Delete', variant: 'danger' } }
 export const Loading: Story = { args: { children: 'Save', isLoading: true, loadingText: 'Saving…' } };
 export const Disabled: Story = { args: { children: 'Disabled', disabled: true } };
 
-export const WithIcon: Story = {
+export const WithIcon: StoryObj = {
   render: () => (
     <Button variant="secondary">
       <Download className="h-4 w-4" aria-hidden="true" />
@@ -32,7 +32,7 @@ export const WithIcon: Story = {
   ),
 };
 
-export const AllSizes: Story = {
+export const AllSizes: StoryObj = {
   render: () => (
     <div className="flex items-center gap-3">
       <Button size="sm">Small</Button>

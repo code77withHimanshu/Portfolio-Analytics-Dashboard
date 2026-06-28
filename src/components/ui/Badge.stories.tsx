@@ -41,7 +41,7 @@ export const Gain: Story = { args: { children: '+12.5%', variant: 'gain' } };
 
 export const Loss: Story = { args: { children: '-4.2%', variant: 'loss' } };
 
-export const AllVariants: Story = {
+export const AllVariants: StoryObj = {
   render: () => (
     <div className="flex flex-wrap gap-2">
       {(['default', 'fresh', 'stale', 'error', 'warning', 'gain', 'loss'] as const).map((v) => (
@@ -51,7 +51,7 @@ export const AllVariants: Story = {
   ),
 };
 
-export const Sizes: Story = {
+export const Sizes: StoryObj = {
   render: () => (
     <div className="flex items-center gap-2">
       <Badge size="sm">Small</Badge>

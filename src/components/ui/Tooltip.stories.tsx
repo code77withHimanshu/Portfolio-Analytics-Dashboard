@@ -19,7 +19,7 @@ export const Default: Story = {
   },
 };
 
-export const WithIcon: Story = {
+export const WithIcon: StoryObj = {
   render: () => (
     <Tooltip content="Sharpe Ratio measures risk-adjusted returns. Higher is better.">
       <HelpCircle className="h-4 w-4 text-slate-400" aria-label="About Sharpe Ratio" />
